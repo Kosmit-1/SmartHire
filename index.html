@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Classifier</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="webstyle.css">
+</head>
+<body>
+  <header class="top">
+    <h1>SmartHire</h1>
+    <p>Upload your resume and see which roles fit your skills, education and experience.</p>
+  </header>
+
+  <main>
+    <!-- Step 1: upload -->
+    <section id="upload-view">
+      <div id="drop-zone" tabindex="0" role="button" aria-label="Upload resumes">
+        <p>
+          <strong>Drop your resume here</strong><br>
+          or click to browse. PDF or DOCX, up to 5 MB each.
+        </p>
+        <input type="file" id="file-input" accept=".pdf,.docx" multiple hidden>
+      </div>
+
+      <p id="message" role="alert"></p>
+      <ul id="file-list"></ul>
+
+      <button id="analyze-resume" class="btn" disabled>
+        Analyze
+      </button>
+    </section>
+
+    <!-- Step 2: loading -->
+    <section id="loading-view" hidden>
+      <div class="spinner" aria-hidden="true"></div>
+      <p>Analyzing resumes. This can take a few seconds.</p>
+    </section>
+
+    <!-- Step 3: results -->
+    <section id="results-view" hidden>
+      <div id="results"></div>
+      <button id="reset" class="btn btn-ghost">
+        Analyze more resumes
+      </button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
